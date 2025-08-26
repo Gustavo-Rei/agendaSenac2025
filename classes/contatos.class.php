@@ -90,7 +90,7 @@
             $emailExistente = $this->existeEmail($email);
             if(count($emailExistente) > 0 && $emailExistente['id'] != $id){
                 return FALSE;
-            } else (
+            } else{
                 try{
                     $sql = $this->con->conectar()->prepare("UPDATE contatos SET nome = :nome, endereco = :endereco, email = :email, telefone = :telefone, redeSocial = :redeSocial, profissao = :profissao, dtNasc = :dtNasc, foto = :foto, ativo = :ativo WHERE id = :id");
                     $sql->bindValue(":nome", $nome);
@@ -108,6 +108,6 @@
                 }catch(PDOException $ex){
                     echo 'ERRO: '.$ex->getMessage();
                 }
-            )
+            }
         }
     }
