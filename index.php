@@ -1,8 +1,10 @@
 <?php
  include 'inc/header.inc.php';
  include 'classes/contatos.class.php';
+ include 'classes/funcoes.class.php';
 
  $contatos = new Contatos();
+ $fn = new Funcoes();
 ?>
 
 <h1>Agenda Senac 2025</h1>
@@ -37,7 +39,7 @@
             <td><?php echo $item['telefone']; ?></td>
             <td><?php echo $item['redeSocial']; ?></td>
             <td><?php echo $item['profissao']; ?></td>
-            <td><?php echo $item['dtNasc']; ?></td>
+            <td><?php echo $fn->dtNasc($item['dtNasc'], 2); ?></td>
             <td><?php echo $item['foto']; ?></td>
             <td><?php echo $item['ativo']; ?></td>
             <td>
