@@ -110,4 +110,9 @@
                 }
             }
         }
+        public function deletar ($id){
+            $sql = $this->con->conectar()->prepare("DELETE FROM contatos WHERE id = :id");
+            $sql->bindValue(":id", $id);
+            $sql->execute();
+        }
     }

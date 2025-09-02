@@ -44,7 +44,7 @@
             <td><?php echo $item['ativo']; ?></td>
             <td>
                 <a href="editarContato.php?id=<?php echo $item['id']?>">EDITAR</a>
-                <a href="#">/ EXCLUIR</a>
+                <a href="excluirContato.php?id=<?php echo $item['id']?>" onclick="return confirm('Você tem certeza que excluir este contato?')">| EXCLUIR</a>
             </td>
         </tr>
     </tbody>
