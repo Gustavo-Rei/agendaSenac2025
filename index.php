@@ -9,6 +9,7 @@
 
 <h1>Agenda Senac 2025</h1>
 <button><a href="adicionarContato.php">ADICIONAR</a></button>
+<button><a href="gestaoUsuario.php">USUÁRIOS</a></button>
 
 <table border="4" width="100%">
     <tr>
