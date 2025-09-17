@@ -40,3 +40,7 @@
     </tbody>
     <?php endforeach; ?>
 </table>
+
+<?php
+ include 'inc/footer.inc.php';
+?>    

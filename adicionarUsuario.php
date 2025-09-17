@@ -35,3 +35,7 @@
 
         <input type="submit" value="Salvar" />
     </form>
+
+<?php
+    include 'inc/footer.inc.php';
+?>    
