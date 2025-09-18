@@ -13,27 +13,48 @@
     }
 ?>
 
-    <h1>CADASTRAR USUÁRIO</h1>
+<div class="container">
+    <h1 style="text-align:center; margin-bottom:20px;">Cadastrar Usuário</h1>
 
-    <form method="POST" >
-        Nome: <br>
-        <input type="text" name="nome" /> <br><br>
-        
-        Email: <br>
-        <input type="email" name="email" /> <br><br>
-        
-        Senha: <br>
-        <input type="password" name="senha" /> <br><br>
+    <form method="POST" class="form-contato">
 
-        Permissões: <br>
-        <input type="checkbox" name="permissoes[]" value="adicionar"> Adicionar
-        <input type="checkbox" name="permissoes[]" value="editar"> Editar
-        <input type="checkbox" name="permissoes[]" value="excluir"> Excluir
-        <input type="checkbox" name="permissoes[]" value="super"> Super<br><br>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required />
+
+        <label for="email">Email:</label>
+        <input type="mail" id="email" name="email" required />
+
+        <label for="senha">Senha:</label>
+        <div style="position:relative;">
+            <input type="text" id="senha" name="senha" required placeholder="Digite a senha" />
+            <span onclick="toggleSenha()" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); cursor:pointer; color:#666; font-size:0.9em;">
+                👁
+            </span>
+        </div>
+
+        <label>Permissões:</label>
+        <div style="display:flex; flex-wrap:wrap; gap:15px; margin-top:5px;">
+            <label><input type="checkbox" name="permissoes[]" value="adicionar"> Adicionar</label>
+            <label><input type="checkbox" name="permissoes[]" value="editar"> Editar</label>
+            <label><input type="checkbox" name="permissoes[]" value="excluir"> Excluir</label>
+            <label><input type="checkbox" name="permissoes[]" value="super"> Super</label>
+        </div>
 
         <input type="submit" value="Salvar" />
     </form>
+</div>
+
+<script>
+function toggleSenha() {
+    const input = document.getElementById("senha");
+    if (input.type === "password") {
+        input.type = "text";
+    } else {
+        input.type = "password";
+    }
+}
+</script>
 
 <?php
     include 'inc/footer.inc.php';
-?>    
+?>
