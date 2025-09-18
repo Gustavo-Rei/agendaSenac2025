@@ -1,6 +1,5 @@
-<?php include 'inc/header.inc.php'; ?>
-
-<?php 
+<?php
+    include 'inc/header.inc.php';
     include 'classes/usuario.class.php'; 
     include 'classes/funcoes.class.php'; 
 
