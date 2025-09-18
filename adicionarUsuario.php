@@ -1,5 +1,4 @@
 <?php
-
     require 'inc/header.inc.php';
     require 'classes/usuario.class.php';
 
@@ -12,7 +11,6 @@
         $usuario->adicionar($email, $nome, $senha, $permissoes);
         header('Location: gestaoUsuario.php');
     }
-
 ?>
 
     <h1>CADASTRAR USUÁRIO</h1>

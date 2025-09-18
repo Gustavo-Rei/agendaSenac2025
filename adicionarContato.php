@@ -5,7 +5,7 @@
 
 <h1>ADICIONAR CONTATO</h1>
 
-<form method="POST" action="adicionarContatoSubmit.php">
+<form class="form-contato" method="POST" action="adicionarContatoSubmit.php">
     Nome: <br>
         <input type="text" name="nome"/><br><br>
     Endereço: <br>
