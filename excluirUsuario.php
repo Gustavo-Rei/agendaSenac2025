@@ -1,5 +1,5 @@
 <?php
-    include 'classes/usuario.class.php';
+    include 'classes/usuarios.class.php';
     $con = new Usuario();
 
     if (!empty($_GET['id'])) {

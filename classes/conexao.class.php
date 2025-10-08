@@ -1,6 +1,6 @@
 <?php
     //Fabrica de conexoes
-    class Conexao {
+    class Conexao { 
         private $usuario;
         private $senha;
         private $banco;

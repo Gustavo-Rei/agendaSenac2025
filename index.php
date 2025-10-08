@@ -1,8 +1,16 @@
 <?php
+    session_start();
     include 'inc/header.inc.php';
     include 'classes/contatos.class.php';
     include 'classes/funcoes.class.php';
+    include 'classes/usuarios.class.php';
 
+    if (!isset($_SESSION['logado'])){
+        header ('location: login.php');
+        exit;
+    }
+
+    $usuario = new Usuarios();
     $contatos = new Contatos();
     $fn = new Funcoes();
 ?>
@@ -12,6 +20,7 @@
     <div class="button-group">
         <a href="adicionarContato.php" class="btn">Adicionar Contato</a>
         <a href="gestaoUsuario.php" class="btn">Gerenciar Contato</a>
+        <a href="sair.php" class="btn"> Sair</a>
     </div>
 
     <table border="4" width="100%">

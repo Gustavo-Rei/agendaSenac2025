@@ -1,8 +1,8 @@
 <?php
     require 'inc/header.inc.php';
-    include 'classes/usuario.class.php';
+    include 'classes/usuarios.class.php';
 
-    $usuario = new Usuario();
+    $usuario = new Usuarios();
 
     if (!empty($_GET['id'])) {
         $id = $_GET['id'];

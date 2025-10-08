@@ -1,9 +1,9 @@
 <?php
     include 'inc/header.inc.php';
-    include 'classes/usuario.class.php'; 
+    include 'classes/usuarios.class.php'; 
     include 'classes/funcoes.class.php'; 
 
-    $usuario = new Usuario();
+    $usuario = new Usuarios();
     $fn = new Funcoes(); 
 ?>
 
@@ -12,6 +12,7 @@
     <div>
         <a href="adicionarUsuario.php" class="btn">Adicionar Usuario</a>
         <a href="index.php" class="btn">Voltar para Agenda</a>
+        <a href="sair.php" class="btn"> Sair</a>
     </div>
     <table border="3" width="100%" >
         <tr>

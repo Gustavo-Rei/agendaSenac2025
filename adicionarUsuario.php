@@ -1,8 +1,8 @@
 <?php
     require 'inc/header.inc.php';
-    require 'classes/usuario.class.php';
+    require 'classes/usuarios.class.php';
 
-    $usuario = new Usuario();
+    $usuario = new Usuarios();
     if(isset($_POST['email']) && !empty($_POST['email'])) {
         $nome = addslashes($_POST['nome']);
         $email = addslashes($_POST['email']);
