@@ -28,3 +28,7 @@
     <a href="esqueceuSenha.php">ESQUECEU SUA SENHA ANIMAL?</a><br>
     <input type="submit" value="Fazer Login">
 </form>
+
+<?php
+ include 'inc/footer.inc.php';
+?>   

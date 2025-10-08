@@ -16,7 +16,7 @@
 ?>
 
 <div class="container">
-    <h1>Agenda Senac 2025</h1>
+    <h1>Contatos</h1>
     <div class="button-group">
         <a href="adicionarContato.php" class="btn">Adicionar Contato</a>
         <a href="gestaoUsuario.php" class="btn">Gerenciar Contato</a>
