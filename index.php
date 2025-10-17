@@ -11,15 +11,21 @@
     }
 
     $usuario = new Usuarios();
+    $usuario->setUsuario($_SESSION['logado']);
     $contatos = new Contatos();
     $fn = new Funcoes();
 ?>
 
 <div class="container">
     <h1>Contatos</h1>
-    <div class="button-group">
-        <a href="adicionarContato.php" class="btn">Adicionar Contato</a>
-        <a href="gestaoUsuario.php" class="btn">Gerenciar Contato</a>
+    <div>
+        <?php if($usuario->temPermissao("adicionar")): ?>
+            <a href="adicionarContato.php" class="btn">Adicionar Contato</a>
+        <?php endif; ?>
+        
+        <?php if($usuario->temPermissao("super")): ?>
+            <a href="gestaoUsuario.php" class="btn">Gerenciar Contato</a>
+        <?php endif; ?>
         <a href="sair.php" class="btn"> Sair</a>
     </div>
 
@@ -56,8 +62,15 @@
                 <td><?php echo $item['foto']; ?></td>
                 <td><?php echo $item['ativo']; ?></td>
                 <td>
-                    <a href="editarContato.php?id=<?php echo $item['id']?>">EDITAR</a>
-                    <a href="excluirContato.php?id=<?php echo $item['id']?>" onclick="return confirm('Você tem certeza que excluir este contato?')">| EXCLUIR</a>
+                    <div class="button-group">
+                        <?php if($usuario->temPermissao("editar")): ?>
+                            <a href="editarContato.php?id=<?php echo $item['id']?>" class="btn">EDITAR</a>
+                        <?php endif; ?>
+
+                        <?php if($usuario->temPermissao("excluir")): ?>
+                            <a href="excluirContato.php?id=<?php echo $item['id']?>" onclick="return confirm('Você tem certeza que excluir este contato?')" class="btn">EXCLUIR</a>
+                        <?php endif; ?>
+                    </div>
                 </td>
             </tr>
         </tbody>

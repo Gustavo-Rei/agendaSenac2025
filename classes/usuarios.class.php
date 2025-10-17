@@ -27,7 +27,30 @@
             }
             return FALSE;
         }
+
+        public function setUsuario($id){
+            $this->id = $id;
+            $sql = $this->con->conectar()->prepare("SELECT * FROM usuario WHERE id = :id");
+            $sql->bindValue(":id", $this->id);
+            $sql->execute();
+
+            if($sql->rowCount() > 0){
+                $sql = $sql->fetch();
+                $this->permissoes = explode(',', $sql ['permissoes']);
+            }
+        }
+
+        public function temPermissao($p){
+            if(in_array($p, $this->permissoes)){
+                return TRUE;
+            }
+            return FALSE;
+        }
         
+        public function getPermissoes(){
+            return $this->permissoes;
+        }
+
         private function existeEmail($email) {
             $sql = $this->con->conectar()->prepare("SELECT id FROM usuario WHERE email = :email");
             $sql->bindParam(":email", $email, PDO::PARAM_STR);
@@ -82,4 +105,3 @@
             $sql->execute();
         }
     }
-

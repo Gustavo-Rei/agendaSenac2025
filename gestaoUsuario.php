@@ -4,6 +4,7 @@
     include 'classes/funcoes.class.php'; 
 
     $usuario = new Usuarios();
+    $usuario->setUsuario($_SESSION['logado']);
     $fn = new Funcoes(); 
 ?>
 
@@ -19,7 +20,6 @@
             <th>ID</th>
             <th>NOME</th>
             <th>EMAIL</th>
-            <th>SENHA</th>
             <th>PERMISSOES</th>
             <th>AÇÕES</th>
         </tr>
@@ -32,11 +32,12 @@
                 <td><?php echo $item['id']; ?></td>
                 <td><?php echo $item['nome']; ?></td>
                 <td><?php echo $item['email']; ?></td>
-                <td><?php echo $item['senha']; ?></td>
                 <td><?php echo $item['permissoes']; ?></td>
                 <td>
-                    <a href="editarUsuario.php?id=<?php echo $item['id']; ?>">Editar</a>
-                    <a href="excluirUsuario.php?id=<?php echo $item['id']; ?>">Excluir</a>
+                    <div>
+                        <a href="editarUsuario.php?id=<?php echo $item['id']; ?>" class="btn">Editar</a>
+                        <a href="excluirUsuario.php?id=<?php echo $item['id']; ?>" class="btn">Excluir</a>
+                    </div>
                 </td>
             </tr>
         </tbody>
